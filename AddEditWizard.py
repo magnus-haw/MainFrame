@@ -77,7 +77,8 @@ class AddEditWizard(wiz.Wizard):
         wizard = wiz.Wizard.__init__(self, parent, wx.ID_ANY, "Add/Edit Wizard")
 
         pageData =[]
-        if itemData == None:
+        print(itemData)
+        if itemData is None:
             for i in range(0,5):
                 pageData.append(None)
         else:

@@ -101,7 +101,7 @@ def select(dname,table,columns=['*'],conditions=None,order=None,limit=None,offse
     if offset != None:
         mycmd += " OFFSET " + str(offset)
     mycmd +=';'
-    print mycmd
+    print(mycmd)
     c.execute(mycmd)
     data = c.fetchall()
     c.close()
@@ -112,7 +112,7 @@ def alter_cell(dname,table,value,column,rowid,refcol):
     mycmd = 'UPDATE '+table+' SET ' + column + '=? WHERE '+refcol+'='+'"'+rowid+'"'+';'
     conn = sqlite3.connect(dname)
     c = conn.cursor()
-    print mycmd
+    print(mycmd)
     c.execute(mycmd,value)
     conn.commit()
     c.close()
@@ -193,7 +193,7 @@ dname = 'Bryce_outreach.db'
 
 if __name__ == '__main__':
     data = select(dname,'objects',conditions=["name like '%Cat%'"])
-    print data
+    print(data)
     ##for itemid in data:
     ##    myid = itemid[0]
     ##    fc   = itemid[1]

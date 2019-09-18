@@ -24,9 +24,9 @@ import  wx.lib.imagebrowser    as  ib
 
 from mylists import con,otypes
 
-cdict = dict(zip(con[:,0],con[:,1]))
-abbrdict = dict(zip(con[:,1],con[:,0]))
-typdict=dict(zip(otypes[:,0],otypes[:,1]))
+cdict = dict(list(zip(con[:,0],con[:,1])))
+abbrdict = dict(list(zip(con[:,1],con[:,0])))
+typdict=dict(list(zip(otypes[:,0],otypes[:,1])))
 #----------------------------------------------------------------------
 
 def makePageTitle(wizPg, title):
@@ -165,7 +165,7 @@ class NumberPage(wiz.WizardPageSimple):
         TypeLabel.SetHelpText("Select type from list")
         
         listabbr = otypes[:,1]
-        intdict = dict(zip(listabbr,range(0,len(listabbr))))
+        intdict = dict(list(zip(listabbr,list(range(0,len(listabbr))))))
         self.TypeEntry = wx.ListBox(self, -1, size=(200, 100), choices=otypes[:,0], style=wx.LB_SINGLE)
         self.TypeEntry.SetSelection(intdict[data[0]])
         TypeSizer.Add(TypeLabel,1, wx.ALIGN_CENTRE|wx.ALL, 5)
@@ -241,7 +241,7 @@ class LocationPage(wiz.WizardPageSimple):
         
         listcons = con[:,0]
         listcons.sort()
-        ndict = dict(zip(listcons,range(0,len(listcons))))
+        ndict = dict(list(zip(listcons,list(range(0,len(listcons))))))
 
         myind = ndict[abbrdict[data[2]]]
         self.TypeEntry = wx.ListBox(self, -1, size=(120, 100), choices=listcons, style=wx.LB_SINGLE)

@@ -50,7 +50,7 @@ TBFLAGS = ( wx.TB_HORIZONTAL
             )
 
 mnths = ['Jan','Feb','Mar','Apr','May','Jun','July','Aug','Sep','Oct','Nov','Dec']
-months= dict(zip(mnths,range(1,13)))
+months= dict(list(zip(mnths,list(range(1,13)))))
 #---------------------------------------------------------------------------
 
 #---------------------------------------------------------------------------
@@ -59,7 +59,7 @@ class MainFrame(wx.Frame):
     def __init__(self, parent, ID, title):
         wx.Frame.__init__(self, parent, ID, title, size=(1000, 700))
         self.log = mylog()
-        print os.getcwd()
+        print(os.getcwd())
 
         #Default selection settings
         dlist = select(dname,'defaults',conditions=["name=='default'"])[0]
@@ -267,7 +267,7 @@ class MainFrame(wx.Frame):
 
 
     def OnPopupOne(self, event):
-        print "Popup one\n"
+        print("Popup one\n")
         #print "FindItem:", self.listpanel.list.FindItem(-1, "Roxette")
         #print "FindItemData:", self.listpanel.list.FindItemData(-1, 11)
 
@@ -296,13 +296,13 @@ class MainFrame(wx.Frame):
 
 
     def OnToolClick(self, event):
-        print "tool %s clicked\n" % event.GetId()
+        print("tool %s clicked\n" % event.GetId())
         #tb = self.GetToolBar()
         #tb = event.GetEventObject()
         #tb.EnableTool(10, not tb.GetToolEnabled(10))
 
     def OnToolRClick(self, event):
-        print "tool %s right-clicked\n" % event.GetId()
+        print("tool %s right-clicked\n" % event.GetId())
 
     def OnCombo(self, evt):
         #"All Types", "Star System","Open Cluster", "Globular Cluster", "Galaxy", "Nebula"
@@ -342,9 +342,9 @@ class MainFrame(wx.Frame):
         origdata = array(objlist,dtype='object')
 
         #Data and default values
-        objdata = dict(zip(range(0,len(origdata)),origdata))
+        objdata = dict(list(zip(list(range(0,len(origdata))),origdata)))
         #print "objdata",objdata
-        IDdict = dict(zip(origdata[:,1],origdata))
+        IDdict = dict(list(zip(origdata[:,1],origdata)))
         self.data = objdata
         self.dict = IDdict
         if flag:
@@ -398,7 +398,7 @@ class MainFrame(wx.Frame):
             alter_cell(dname,'defaults',[mylong],'long','default','name')
             self.UpdateData()
         else:
-            print "You pressed Cancel\n"
+            print("You pressed Cancel\n")
         dlg.Destroy()
 
     ##Creates dialog box for filter settings
@@ -428,7 +428,7 @@ class MainFrame(wx.Frame):
             alter_cell(dname,'defaults',[late],'late','default','name')
             self.UpdateData()
         else:
-            print "You pressed Cancel\n"
+            print("You pressed Cancel\n")
         dlg.Destroy()
 
     def EditItem(self, evt):

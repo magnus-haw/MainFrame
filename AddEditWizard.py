@@ -21,13 +21,13 @@ from numpy import array
 from WizardPages import NamePage,NumberPage,TitlePage
 from WizardPages import ImagePage, LocationPage,CommentPage
 
-testrow = array([u'Albireo', u'Beta Cyg', u'Bin', u'3.18', u'0.583', u'0.45',
-        u'Cyg', u'19.5120277778', u'27.9596388889',
-        u'/graphics/finding_charts/Albireo.html',
-        u'graphics/images/Albireo.jpg',
-        u'Albireo (Beta Cyg) is the fifth brightest star in the constellation Cygnus. Although it has the Bayer designation beta, it is fainter than Gamma Cygni, Delta Cygni, and Epsilon Cygni. Albireo appears to the naked eye to be a single star of magnitude 3 but through a telescope, even low magnification views resolve it into a double star. The brighter yellow star (actually itself a very close binary system) makes a striking colour contrast with its fainter blue companion star.',
-        u"Hen's beak, Menchir", u'http://en.wikipedia.org/wiki/Albireo',
-        u'Can split with low power. Nice dual color binary.'], 
+testrow = array(['Albireo', 'Beta Cyg', 'Bin', '3.18', '0.583', '0.45',
+        'Cyg', '19.5120277778', '27.9596388889',
+        '/graphics/finding_charts/Albireo.html',
+        'graphics/images/Albireo.jpg',
+        'Albireo (Beta Cyg) is the fifth brightest star in the constellation Cygnus. Although it has the Bayer designation beta, it is fainter than Gamma Cygni, Delta Cygni, and Epsilon Cygni. Albireo appears to the naked eye to be a single star of magnitude 3 but through a telescope, even low magnification views resolve it into a double star. The brighter yellow star (actually itself a very close binary system) makes a striking colour contrast with its fainter blue companion star.',
+        "Hen's beak, Menchir", 'http://en.wikipedia.org/wiki/Albireo',
+        'Can split with low power. Nice dual color binary.'], 
       dtype='<U477')
 
 class mylog:
@@ -36,7 +36,7 @@ class mylog:
         self.flag=flag
     def write(self,txt):
         if self.flag:
-            print txt
+            print(txt)
         self.log += txt + '\n'
   
 #----------------------------------------------------------------------

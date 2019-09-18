@@ -131,7 +131,7 @@ class LocationDialog(wx.Dialog):
         sizer.Fit(self)
 
     def GetLatLong(self):
-        signs = dict(zip(['N','S','E','W'],[1,-1,1,-1]))
+        signs = dict(list(zip(['N','S','E','W'],[1,-1,1,-1])))
         lat  = float(self.latd.GetValue()) + float(self.latm.GetValue())/60. + float(self.lats.GetValue())/3600.
         longt= float(self.longd.GetValue()) + float(self.longm.GetValue())/60. + float(self.longs.GetValue())/3600.
         latsign = signs[self.latdirec.GetValue()]
@@ -160,11 +160,11 @@ class TestPanel(wx.Panel):
         mylat=None
         mylong=None
         if val == wx.ID_OK:
-            print "You pressed OK\n"
+            print("You pressed OK\n")
             mylat,mylong=dlg.GetLatLong()
-            print mylat,mylong
+            print(mylat,mylong)
         else:
-            print "You pressed Cancel\n"
+            print("You pressed Cancel\n")
         dlg.Destroy()
         return mylat,mylong
         

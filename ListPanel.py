@@ -43,10 +43,10 @@ class MyListCtrl(wx.ListCtrl,
         self.InsertColumn(6, "Constellation")
         self.InsertColumn(7, "Comments")
 
-        items = self.itemDataMap.items()
+        items = list(self.itemDataMap.items())
         for key, data in items:
             #print key,data
-            index = self.InsertStringItem(sys.maxint, data[0])
+            index = self.InsertStringItem(sys.maxsize, data[0])
             for i in range(1,7):
                 self.SetStringItem(index, i, str(data[i]))
             self.SetStringItem(index, 7, str(data[-2]))

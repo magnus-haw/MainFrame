@@ -322,7 +322,7 @@ if __name__ == '__main__':
     ov1  = get_obs_overlap(JD,RA,dec,Bryce_long,Bryce_lat,alt=5,late=23)
     ov2  = get_obs_overlap(JD,RA,dec,Bryce_long,Bryce_lat,alt=25,late=23)
     
-    print ov1
-    print ov2
+    print(ov1)
+    print(ov2)
 #---------------------------------------------------------------------------
 

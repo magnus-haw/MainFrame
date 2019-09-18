@@ -116,7 +116,7 @@ class FilterDialog(wx.Dialog):
         sizer.Fit(self)
 
     def GetAltLimLate(self):
-        signs = dict(zip(['N','S','E','W'],[1,-1,1,-1]))
+        signs = dict(list(zip(['N','S','E','W'],[1,-1,1,-1])))
         alt  = int(self.altCtrl.GetValue())
         late = int(self.lateCtrl.GetValue())
         lim  = int(self.limCtrl.GetValue())
@@ -144,11 +144,11 @@ class TestPanel(wx.Panel):
         mylat=None
         mylong=None
         if val == wx.ID_OK:
-            print "You pressed OK\n"
+            print("You pressed OK\n")
             alt,limit,late=dlg.GetAltLimLate()
-            print alt,limit,late
+            print(alt,limit,late)
         else:
-            print "You pressed Cancel\n"
+            print("You pressed Cancel\n")
         dlg.Destroy()
         return alt,limit,late
         

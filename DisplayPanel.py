@@ -104,7 +104,7 @@ class MyDisplayPanel(wx.Panel):
         cwd = os.getcwd()
         URL ='file://' + cwd+ '/' + url
         self.FChart.SetURL(URL)
-        print "URL",self.FChart.GetURL()
+        print("URL",self.FChart.GetURL())
         
     def setImage(self,fname):
         if lower(fname[-4:]) == '.jpg' or lower(fname[-4:]) == '.jpeg':
